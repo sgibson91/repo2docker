@@ -47,8 +47,11 @@ setup(
     name="jupyter-repo2docker",
     version=versioneer.get_version(),
     install_requires=[
+        "chardet",
         "docker",
+        "entrypoints",
         "escapism",
+        "iso8601",
         "jinja2",
         "python-json-logger",
         "requests",
@@ -89,6 +92,7 @@ setup(
         "console_scripts": [
             "jupyter-repo2docker = repo2docker.__main__:main",
             "repo2docker = repo2docker.__main__:main",
-        ]
+        ],
+        "repo2docker.engines": ["docker = repo2docker.docker:DockerEngine"],
     },
 )
